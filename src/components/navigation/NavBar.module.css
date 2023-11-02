@@ -1,6 +1,6 @@
 .navbar li{
     border-bottom: solid 1px transparent;
-    padding-bottom: 5px;
+    /* padding-bottom: 5px; */
     transition: 150ms;
 }
 .navbar li:hover,.navbar li:global(.active){

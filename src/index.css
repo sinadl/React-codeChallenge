@@ -14,7 +14,7 @@
 }
 main{
   background-image: url('../public/image/mainbg.png');
-  min-height: 76vh;
+  min-height: 100vh;
   width: 100%;
   background-position: center;
   background-repeat-y: repeat;
@@ -22,7 +22,7 @@ main{
   background-size: cover;
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 main::before{
@@ -44,4 +44,5 @@ main::before{
   flex-direction: column;
   justify-content: center;
   color: white;
+  margin: 10em 0 auto 0px;
 }
