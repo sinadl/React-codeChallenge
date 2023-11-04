@@ -1,13 +1,19 @@
 import React from 'react'
 import styles from './Footer.module.css'
 
+import logo from './../../../public/image/logo.png'
+import instagram from './../../../public/image/instagram.png'
+import facebook from './../../../public/image/facebook.png'
+import linkedin from './../../../public/image/linkedin.png'
+
 export default function Footer() {
+  const URL = window.location.href;
   return (
-    <footer className="bg-white text-black p-4 flex flex-col justify-center items-center absolute bottom-0 w-full ">
+    <footer className={` ${URL.includes('movie')? 'bg-[#272626] ' : 'bg-white absolute'} text-black p-4 flex flex-col justify-center items-center  bottom-0 w-full`}>
     <div className="flex flex-wrap container my-5 sm:justify-between">
       <div className="w-full sm:w-1/5 md:w-1/5 lg:w-1/5 xl:w-1/5 mb-4 sm:mb-0">
         <div className="flex items-center">
-            <img src="./image/logo.png" alt="Logo" className="w-13 h-13 mr-2" />
+            <img src={logo} alt="Logo" className="w-13 h-13 mr-2" />
             <h1 className="text-black font-semibold text-xs">Website Name</h1>
         </div>
       </div>
@@ -47,13 +53,13 @@ export default function Footer() {
       <div className="w-full sm:w-1/3 md:w-1/3 lg:w-1/3 xl:w-1/3">
       <ul className={`flex sm:space-x-5 items-center text-[13px] justify-end mr-5`}>
             <li className="text-black space-x-5">
-            <a href="#"><img src="./image/instagram.png" alt="instagram" /></a>
+            <a href="#"><img src={instagram} alt="instagram" /></a>
             </li>
             <li className="text-black space-x-5">
-            <a href="#"><img src="./image/facebook.png" alt="facebook" /></a>
+            <a href="#"><img src={facebook} alt="facebook" /></a>
             </li>
             <li className="text-black space-x-5">
-            <a href="#"><img src="./image/linkedin.png" alt="linkedin" /></a>
+            <a href="#"><img src={linkedin} alt="linkedin" /></a>
             </li>
         </ul>
       </div>

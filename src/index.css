@@ -13,7 +13,7 @@
   position: relative;
 }
 main{
-  background-image: url('../public/image/mainbg.png');
+  background-image: url('../image/mainbg.png');
   min-height: 100vh;
   width: 100%;
   background-position: center;
@@ -22,8 +22,9 @@ main{
   background-size: cover;
   position: relative;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 main::before{
   content: '';
@@ -44,5 +45,7 @@ main::before{
   flex-direction: column;
   justify-content: center;
   color: white;
-  margin: 10em 0 auto 0px;
+}
+footer.bg-\[\#272626\]  *{
+  color: white !important;
 }

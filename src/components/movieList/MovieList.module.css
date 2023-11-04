@@ -1,0 +1,21 @@
+.movie_list{
+    background: white;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    min-height: 50vh;
+}
+.ads_container{
+    height: 100%;
+    top: 0;
+    justify-content: center;
+}
+.movieList_inner a:global(.active){
+    color: #0079FE;
+    border: solid 1px #0079FE;
+    box-shadow: none;
+}
+
