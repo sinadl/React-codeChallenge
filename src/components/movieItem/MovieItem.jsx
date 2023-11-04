@@ -12,7 +12,7 @@ export default function MovieItem() {
   return (
     <div className='flex w-full h-full justify-center space-x-1 flex-wrap py-5'>
         {status==='loading' && <div className=''><img src={loading}/></div>}
-        {(status==='active' && movies.length===0) && <div className=' border-2 mt-10 rounded-lg border-blue-500 p-3'>There is no movie to display here!!!</div>}
+        {( movies.length===0) && <div className=' border-2 mt-10 rounded-lg border-blue-500 p-3'>There is no movie to display here!!!</div>}
         {status==='error' && <div className=' border-blue-500 p-3'>something went wrong pls try again later</div>}
 
         {movies.map((movie)=><Movie key={movie.id} movie={movie} />)}
