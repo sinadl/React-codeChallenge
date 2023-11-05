@@ -15,7 +15,7 @@ Currently, two official plugins are available:
   <li>movie detail page</li>
 </ul>
 </p>
-<h2>What we are doing here?</h2> 
+<h2>What are we doing here?</h2> 
 <p>In this project the main focus is on getting data from API and listing them on the display.</p>
 <p>First you can search your movie name in the search input on homepage and then using <i><strong>Fetch<strong></i> all the data belongs to movie will appear on display.
 <br>
