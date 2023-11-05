@@ -3,7 +3,7 @@ import React, { createContext, useReducer, useContext } from 'react';
 const MovieContext = createContext();
 
 const initialState = {
-  searchTerm: '',
+  selectedMovie: {},
   movies: [],
   status: 'active',
   error: ''
@@ -11,8 +11,8 @@ const initialState = {
 
 const movieReducer = (state, action) => {
   switch (action.type) {
-    case 'UPDATE_SEARCH_TERM':
-      return { ...state, searchTerm: action.payLoad };
+    case 'MOIVIE_SELECTED':
+      return { ...state, selectedMovie: action.payLoad };
     case 'UPDATE_MOVIES':
       return { ...state, movies: action.payLoad };
     case 'LOADING_ON':

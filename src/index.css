@@ -49,3 +49,8 @@ main::before{
 footer.bg-\[\#272626\]  *{
   color: white !important;
 }
+.navbar li a.active{
+  border-bottom: solid 1px #0079FE;
+  color: #0079FE;
+  border-radius: 0;
+}

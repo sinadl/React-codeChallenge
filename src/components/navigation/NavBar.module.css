@@ -3,7 +3,7 @@
     /* padding-bottom: 5px; */
     transition: 150ms;
 }
-.navbar li:hover,.navbar li:global(.active){
+.navbar a:hover,.navbar a:global(.active){
     border-bottom: solid 1px #0079FE;
     color: #0079FE;
 }

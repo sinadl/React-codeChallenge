@@ -2,27 +2,34 @@ import { func } from 'prop-types'
 import React from 'react'
 import { useState } from 'react'
 import { useMovieContext } from '../../context/MovieContext'
-import searchIcon from '../../../public/image/search.png'
-import { useNavigate } from 'react-router-dom'
+import searchIcon from '../../assets/search.png'
+import { useNavigate, useParams} from 'react-router-dom'
 
 const BASE_URL = 'https://moviesapi.ir/api/v1/movies?'
-export default function SearchBox() {
+export default function SearchBox({classMovie}) {
    const [searchVal,setSearchVal] = useState('')
    const {state,dispatch} = useMovieContext()
    const navigate = useNavigate(); 
    const URL = window.location.href;
 
+
+   const {movie,id} = useParams()
    async function getMovieHandler(e){
     e.preventDefault()
     dispatch({type:'UPDATE_MOVIES',payLoad:[]})
     try {
-        if(!URL.includes('movie')) navigate('movie')
+        if(!URL.includes('movie')){
+          navigate('movie')
+        } else if(URL.includes(movie)){
+          navigate('/movie');
+        }
         
         dispatch({type:'LOADING_ON'})
-        const res = await fetch(`${BASE_URL}q=${searchVal}`)
+        const res = await fetch(`${BASE_URL}q=${searchVal}&p=3`)
         const data = await res.json();
         dispatch({type:'DATA_RECIEVED'})
         dispatch({type:'UPDATE_MOVIES',payLoad:data.data})
+        console.log(data)
     } catch (error) {
         console.error('something went wrong while fetching data!!')
         dispatch({type:'DATA_ERROR',payLoad:'pls try after 5 min'})
@@ -30,9 +37,8 @@ export default function SearchBox() {
         setSearchVal('')
     }
    }
-   console.log(state)
   return (
-    <form className="relative mt-10">
+    <form className={`relative mt-10 ${classMovie}`}>
   <input
     className="flex text-black justify-center items-center w-full pr-10 pl-5 py-2 border rounded-full"
     type="text"

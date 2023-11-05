@@ -8,6 +8,7 @@ import { MovieProvider } from './context/MovieContext'
 import SerieList from './components/serieList/SerieList'
 import Homepage from './pages/Homepage'
 import MovieItem from './components/movieItem/MovieItem'
+import MovieDetail from './components/movieDetail/MovieDetail'
 
 function App() {
 
@@ -18,7 +19,6 @@ function App() {
       <header>
         <NavBar/>
       </header>
-      <main>
         <Routes>
           <Route path='/' element={<Homepage/>}/>
           <Route path='/movie' element={<MovieList/>}>
@@ -26,8 +26,8 @@ function App() {
             <Route path='series' element={<SerieList/>}/>
             <Route path='movies' element={<MovieItem/>}/>
           </Route>
+          <Route path="movie/movies/:movie/:id" element={<MovieDetail/>}/>
         </Routes>
-      </main>
       <Footer/>
       </BrowserRouter>
     </MovieProvider>
